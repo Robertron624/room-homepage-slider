@@ -24,3 +24,22 @@ mobileCloseIcon.addEventListener('click', () => {
         isMobileNavOpen = false;
     }
 });
+
+// Slider controls
+const slider = document.querySelector('.slider-wrapper');
+const prevBtn = document.querySelector('.previous');
+const nextBtn = document.querySelector('.next');
+
+const slides = document.querySelectorAll('.slide');
+
+let currentSlide = 0;
+
+const slideWidth = slides[currentSlide].clientWidth;
+
+prevBtn.addEventListener('click', () => {
+    console.log('prev');
+});
+
+nextBtn.addEventListener('click', () => {
+    console.log('next');
+});
