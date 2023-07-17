@@ -184,7 +184,7 @@ main .slider-container {
 }
 main .slider-container .slider-controls {
   position: absolute;
-  top: 12.3rem;
+  top: 11.89rem;
   right: 0;
   background-color: hsl(0, 0%, 0%);
   display: flex;
@@ -223,6 +223,16 @@ main .slider-container .slider-controls button:hover {
 }
 main .slider-container .slider-wrapper {
   position: relative;
+  width: 100%;
+  height: 586px;
+  overflow: hidden;
+}
+main .slider-container .slider-wrapper .slide {
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: absolute;
+  transition: all 0.5s;
 }
 @media (min-width: 768px) {
   main .slider-container .slider-wrapper .slide {
@@ -237,6 +247,8 @@ main .slider-container .slider-wrapper {
 main .slider-container .slider-wrapper .slide .image-container img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .slider-container .slider-wrapper .slide .slide-info {
   padding: 2rem 1.5rem 3rem;
