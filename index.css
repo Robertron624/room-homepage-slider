@@ -182,6 +182,11 @@ header .desktop {
 main .slider-container {
   position: relative;
 }
+@media (min-width: 768px) {
+  main .slider-container {
+    height: 66%;
+  }
+}
 main .slider-container .slider-controls {
   position: absolute;
   top: 11.89rem;
@@ -193,7 +198,9 @@ main .slider-container .slider-controls {
 }
 @media (min-width: 768px) {
   main .slider-container .slider-controls {
-    right: -98px;
+    right: 43.2%;
+    top: 88%;
+    max-width: 10rem;
   }
 }
 main .slider-container .slider-controls button {
@@ -227,6 +234,11 @@ main .slider-container .slider-wrapper {
   height: 586px;
   overflow: hidden;
 }
+@media (min-width: 768px) {
+  main .slider-container .slider-wrapper {
+    height: 420px;
+  }
+}
 main .slider-container .slider-wrapper .slide {
   width: 100%;
   max-width: 800px;
@@ -237,6 +249,8 @@ main .slider-container .slider-wrapper .slide {
 @media (min-width: 768px) {
   main .slider-container .slider-wrapper .slide {
     display: flex;
+    max-width: unset;
+    height: 420px;
   }
 }
 @media (min-width: 768px) {
@@ -292,6 +306,11 @@ main .slider-container .slider-wrapper .slide .slide-info button.shop-now {
 }
 main .slider-container .slider-wrapper .slide .slide-info button.shop-now:hover {
   color: hsl(0, 0%, 63%);
+}
+@media (min-width: 768px) {
+  main section.bottom {
+    height: 381px;
+  }
 }
 @media (min-width: 768px) {
   main section.bottom {

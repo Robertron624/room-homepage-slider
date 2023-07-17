@@ -208,6 +208,10 @@ main {
     .slider-container {
         position: relative;
 
+        @include desktop {
+            height: 66%;
+        }
+
         .slider-controls {
             position: absolute;
             top: 11.89rem;
@@ -218,7 +222,9 @@ main {
             z-index: 1;
 
             @include desktop {
-                right: -98px;
+                right: 43.2%;
+                top: 88%;
+                max-width: 10rem;
             }
 
             button {
@@ -254,6 +260,11 @@ main {
             width: 100%;
             height: 586px;
             overflow: hidden;
+
+            @include desktop {
+                height: 420px;
+            }
+
             .slide {
 
                 width: 100%;
@@ -264,6 +275,8 @@ main {
                 
                 @include desktop {
                     display: flex;
+                    max-width: unset;
+                    height: 420px;
                 }
     
                 .image-container {
@@ -329,6 +342,10 @@ main {
     }
 
     section.bottom {
+
+        @include desktop {
+            height: 381px;
+        }
 
         @include desktop {
             display: grid;
