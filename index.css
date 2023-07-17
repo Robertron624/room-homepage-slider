@@ -27,6 +27,8 @@ dd {
 ul,
 ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Set core root defaults */
@@ -75,6 +77,22 @@ button {
     scroll-behavior: auto !important;
   }
 }
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -86,18 +104,38 @@ body {
 /* Colors */
 header {
   color: hsl(0, 0%, 100%);
-  padding: 2rem 1rem;
   text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 35%;
   position: absolute;
   width: 100vw;
   z-index: 1;
 }
+header .mobile-nav-closed {
+  display: flex;
+  align-items: center;
+  gap: 35%;
+  padding: 2rem 1rem;
+}
+header .mobile-nav-open {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+header .mobile-nav-open .links {
+  display: flex;
+  gap: 1rem;
+}
+header .mobile-nav-open .links li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+}
 
 main .slider-container .slide .image-container {
   position: relative;
+}
+main .slider-container .slide .image-container img {
+  width: 100%;
 }
 main .slider-container .slide .image-container .slider-controls {
   position: absolute;

@@ -28,6 +28,8 @@ dd {
 ul,
 ol {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Set core root defaults */
@@ -77,6 +79,22 @@ button {
     }
 }
 
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* Set core body defaults */
 body {
     min-height: 100vh;
@@ -94,14 +112,38 @@ $very-dark-gray: hsl(0, 0%, 27%);
 
 header {
     color: $white;
-    padding: 2rem 1rem;
     text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 35%;
+   
     position: absolute;
     width: 100vw;
     z-index: 1;
+
+    .mobile-nav-closed {
+        display: flex;
+        align-items: center;
+        gap: 35%;
+        padding: 2rem 1rem;
+    }
+
+    .mobile-nav-open {
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+
+        .links {
+            display: flex;
+            gap: 1rem;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: $black;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }
 
 main {
@@ -110,6 +152,10 @@ main {
         .slide {
             .image-container {
                 position: relative;
+
+                img {
+                    width: 100%;
+                }
 
                 .slider-controls {
                     position: absolute;
