@@ -32,12 +32,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
 - Solution URL: [Github repo](https://github.com/Robertron624/room-homepage-slider)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Netlify URL](https://chimerical-cranachan-501102.netlify.app/)
 
 ## My process
 
