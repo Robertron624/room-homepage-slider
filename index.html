@@ -1,107 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <link rel="stylesheet" href="index.css">
-  
-  <title>Frontend Mentor | Room homepage</title>
+        <link rel="stylesheet" href="index.css" />
 
-</head>
-<body>
-  <header>
-    <div class="mobile-nav-closed">
-      <button class="mobile-hamburger">
-        <span class="sr-only">
-          Open
-        </span>
-        <img src="./images/icon-hamburger.svg" alt="hamburger icon">
-      </button>
-      <a href="/" class="logo-container">
-        <img src="./images/logo.svg" alt="room logo">
-      </a>
-    </div>
-    <div class="mobile-nav-open hidden">
-      <button class="mobile-close">
-        <span class="sr-only">
-          Close
-        </span>
-        <img src="./images/icon-close.svg" alt="close icon">
-      </button>
-      <ul class="links">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/">Shop</a>
-        </li>
-        <li>
-          <a href="/">About</a>
-        </li>
-        <li>
-          <a href="/">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <main>
-    <div class="slider-container">
-      <div class="slide first-slide">
-          <div class="image-container">
-            <img src="./images/mobile-image-hero-1.jpg" alt="living room">
-            <div class="slider-controls">
-              <button class="previous">
-                <img src="./images/icon-angle-left.svg" alt="left arrow">
-                <span class="sr-only">
-                  Previous
-                </span>
-              </button>
-              <button class="next">
-                <img src="./images/icon-angle-right.svg" alt="right arrow">
-                <span class="sr-only">
-                  Next
-                </span>
-              </button>
+        <title>Frontend Mentor | Room homepage</title>
+    </head>
+    <body>
+        <header>
+            <div class="mobile-nav-closed">
+                <button class="mobile-hamburger">
+                    <span class="sr-only"> Open </span>
+                    <img
+                        src="./images/icon-hamburger.svg"
+                        alt="hamburger icon"
+                    />
+                </button>
+                <a href="/" class="logo-container">
+                    <img src="./images/logo.svg" alt="room logo" />
+                </a>
             </div>
-          </div>
-          <div class="slide-info">
-            <h1>Discover innovative ways to decorate</h1>
-            <p>We provide unmatched quality, comfort, and style for property owners across the country. 
-              Our experts combine form and function in bringing your vision to life. Create a room in your 
-              own style with our collection and make your property a reflection of you and what you love.</p>
-            <button class="shop-now">Shop now
-              <img src="./images/icon-arrow.svg" alt="arrow icon">
-            </button>
-          </div>
-      </div>
-    </div>
-    <section class="bottom">
-      <div class="first-image">
-        <img src="./images/image-about-dark.jpg" alt=" furniture in the dark">
-      </div>
-      <div class="bottom-text">
-        <h2>
-          About our furniture
-        </h2>
-        <p>
-          Our multifunctional collection blends design and function to suit your individual taste.
-          Make each room unique, or pick a cohesive theme that best express your interests and what
-          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-          or anything in between. Product specialists are available to help you create your dream space.
-        </p>
-      </div>
-      <div class="second-image">
-        <img src="./images/image-about-light.jpg" alt="chair in the light">
-      </div>
-    </section>
-  </main>
+            <div class="mobile-nav-open hidden">
+                <button class="mobile-close">
+                    <span class="sr-only"> Close </span>
+                    <img src="./images/icon-close.svg" alt="close icon" />
+                </button>
+                <ul class="links">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/">Shop</a>
+                    </li>
+                    <li>
+                        <a href="/">About</a>
+                    </li>
+                    <li>
+                        <a href="/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="desktop">
+                <a class="logo" href="/">
+                    <img src="./images/logo.svg" alt="room logo" />
+                </a>
+                <nav>
+                    <ul class="links">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/shop">Shop</a>
+                        </li>
+                        <li>
+                            <a href="/about">About</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="slider-container">
+                <div class="slide first-slide">
+                    <div class="image-container">
+                        <img
+                            src="./images/mobile-image-hero-1.jpg"
+                            
+                            srcset="./images/desktop-image-hero-1.jpg 1440w, ./images/mobile-image-hero-1.jpg 375w"
+                            sizes="(min-width: 1440px) 1440px, 375px"
 
+                            alt="living room"
+                        />
+                        <div class="slider-controls">
+                            <button class="previous">
+                                <img
+                                    src="./images/icon-angle-left.svg"
+                                    alt="left arrow"
+                                />
+                                <span class="sr-only"> Previous </span>
+                            </button>
+                            <button class="next">
+                                <img
+                                    src="./images/icon-angle-right.svg"
+                                    alt="right arrow"
+                                />
+                                <span class="sr-only"> Next </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="slide-info">
+                        <h1>Discover innovative ways to decorate</h1>
+                        <p>
+                            We provide unmatched quality, comfort, and style for
+                            property owners across the country. Our experts
+                            combine form and function in bringing your vision to
+                            life. Create a room in your own style with our
+                            collection and make your property a reflection of
+                            you and what you love.
+                        </p>
+                        <button class="shop-now">
+                            Shop now
+                            <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill="currentcolor" fill-rule="nonzero"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <section class="bottom">
+                <div class="first-image">
+                    <img
+                        src="./images/image-about-dark.jpg"
+                        alt=" furniture in the dark"
+                    />
+                </div>
+                <div class="bottom-text">
+                    <h2>About our furniture</h2>
+                    <p>
+                        Our multifunctional collection blends design and
+                        function to suit your individual taste. Make each room
+                        unique, or pick a cohesive theme that best express your
+                        interests and what inspires you. Find the furniture
+                        pieces you need, from traditional to contemporary styles
+                        or anything in between. Product specialists are
+                        available to help you create your dream space.
+                    </p>
+                </div>
+                <div class="second-image">
+                    <img
+                        src="./images/image-about-light.jpg"
+                        alt="chair in the light"
+                    />
+                </div>
+            </section>
+        </main>
 
-  <script src="index.js"></script>
-  <!-- Home
+        <script src="index.js"></script>
+        <!-- Home
   Shop
   About
   Contact
@@ -136,6 +182,5 @@
   Make each room unique, or pick a cohesive theme that best express your interests and what
   inspires you. Find the furniture pieces you need, from traditional to contemporary styles
   or anything in between. Product specialists are available to help you create your dream space. -->
-  
-</body>
+    </body>
 </html>

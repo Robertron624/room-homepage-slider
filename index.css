@@ -61,6 +61,7 @@ button {
   background: transparent;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -101,6 +102,7 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
+/* desktop mixin */
 /* Colors */
 header {
   color: hsl(0, 0%, 100%);
@@ -109,11 +111,21 @@ header {
   width: 100vw;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  header {
+    width: 100%;
+  }
+}
 header .mobile-nav-closed {
   display: flex;
   align-items: center;
   gap: 35%;
   padding: 2rem 1rem;
+}
+@media (min-width: 768px) {
+  header .mobile-nav-closed {
+    display: none;
+  }
 }
 header .mobile-nav-open {
   background-color: hsl(0, 0%, 100%);
@@ -129,13 +141,60 @@ header .mobile-nav-open .links li a {
   text-decoration: none;
   color: hsl(0, 0%, 0%);
   font-weight: 700;
+  text-transform: lowercase;
+}
+header .desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  header .desktop {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    padding: 5rem 1rem 2rem;
+    max-width: 1300px;
+    margin-inline: auto;
+  }
+  header .desktop .links {
+    display: flex;
+    gap: 2rem;
+  }
+  header .desktop .links li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+  header .desktop .links li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: hsl(0, 0%, 100%);
+    transition: width 0.3s ease-in-out;
+    margin: 0 auto;
+  }
+  header .desktop .links li:hover::after {
+    width: 100%;
+  }
 }
 
+@media (min-width: 768px) {
+  main .slider-container .slide {
+    display: flex;
+  }
+}
 main .slider-container .slide .image-container {
   position: relative;
 }
+@media (min-width: 768px) {
+  main .slider-container .slide .image-container {
+    width: 50%;
+  }
+}
 main .slider-container .slide .image-container img {
   width: 100%;
+  height: 100%;
 }
 main .slider-container .slide .image-container .slider-controls {
   position: absolute;
@@ -146,6 +205,11 @@ main .slider-container .slide .image-container .slider-controls {
   align-items: center;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  main .slider-container .slide .image-container .slider-controls {
+    right: -98px;
+  }
+}
 main .slider-container .slide .image-container .slider-controls button {
   padding: 0.85rem 0.8rem;
   background: transparent;
@@ -155,20 +219,46 @@ main .slider-container .slide .image-container .slider-controls button {
   font-size: 1.5rem;
   transition: all 0.3s ease-in-out;
 }
+@media (min-width: 768px) {
+  main .slider-container .slide .image-container .slider-controls button {
+    padding: 1rem 1.2rem;
+  }
+}
 main .slider-container .slide .image-container .slider-controls button img {
   width: 0.5rem;
 }
+@media (min-width: 768px) {
+  main .slider-container .slide .image-container .slider-controls button img {
+    width: 0.66rem;
+  }
+}
 main .slider-container .slide .image-container .slider-controls button:hover {
-  color: hsl(0, 0%, 27%);
+  background-color: hsl(0, 0%, 27%);
 }
 main .slider-container .slide .slide-info {
   padding: 2rem 1.5rem 3rem;
+}
+@media (min-width: 768px) {
+  main .slider-container .slide .slide-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 38rem;
+    margin-inline: auto;
+    padding-right: 10rem;
+  }
 }
 main .slider-container .slide .slide-info h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+}
+@media (min-width: 768px) {
+  main .slider-container .slide .slide-info h1 {
+    font-size: 3rem;
+  }
 }
 main .slider-container .slide .slide-info p {
   font-size: 1rem;
@@ -183,6 +273,24 @@ main .slider-container .slide .slide-info button.shop-now {
   width: 70%;
   text-transform: uppercase;
   letter-spacing: 10px;
+  transition: all 0.3s ease-in-out;
+}
+main .slider-container .slide .slide-info button.shop-now:hover {
+  color: hsl(0, 0%, 63%);
+}
+@media (min-width: 768px) {
+  main section.bottom {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+main section.bottom .first-image img {
+  width: 100%;
+  height: 100%;
+}
+main section.bottom .second-image img {
+  width: 100%;
+  height: 100%;
 }
 main section.bottom .bottom-text {
   padding: 2rem 1.5rem;

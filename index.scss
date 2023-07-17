@@ -61,6 +61,7 @@ button {
     background: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -103,6 +104,13 @@ body {
     font-family: "League Spartan", sans-serif;
 }
 
+/* desktop mixin */
+@mixin desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
 /* Colors */
 
 $dark-gray: hsl(0, 0%, 63%);
@@ -118,11 +126,19 @@ header {
     width: 100vw;
     z-index: 1;
 
+    @include desktop {
+        width: 100%;
+    }
+
     .mobile-nav-closed {
         display: flex;
         align-items: center;
         gap: 35%;
         padding: 2rem 1rem;
+
+        @include desktop {
+            display: none;
+        }
     }
 
     .mobile-nav-open {
@@ -140,6 +156,49 @@ header {
                     text-decoration: none;
                     color: $black;
                     font-weight: 700;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+
+    .desktop {
+        display: none;
+
+        @include desktop {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            padding: 5rem 1rem 2rem;
+            max-width: 1300px;
+            margin-inline: auto;
+
+            .links {
+                display: flex;
+                gap: 2rem;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: $white;
+                        font-weight: 700;
+                        text-transform: lowercase;
+                    }
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 0;
+                        height: 2px;
+                        background-color: $white;
+                        transition: width 0.3s ease-in-out;
+                        margin: 0 auto;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+
                 }
             }
         }
@@ -147,14 +206,22 @@ header {
 }
 
 main {
-
     .slider-container {
         .slide {
+            @include desktop {
+                display: flex;
+            }
+
             .image-container {
                 position: relative;
+                
+                @include desktop {
+                    width: 50%;
+                }
 
                 img {
                     width: 100%;
+                    height: 100%;
                 }
 
                 .slider-controls {
@@ -166,6 +233,10 @@ main {
                     align-items: center;
                     z-index: 1;
 
+                    @include desktop {
+                        right: -98px;
+                    }
+
                     button {
                         padding: .85rem .8rem;
                         background: transparent;
@@ -175,25 +246,47 @@ main {
                         font-size: 1.5rem;
                         transition: all 0.3s ease-in-out;
 
+                        @include desktop {
+                            padding: 1rem 1.2rem;
+                        }
+
                         img {
                             width: .5rem;
+
+                            @include desktop {
+                                width: .66rem;
+                            }
+
                         }
 
                         &:hover {
-                            color: $very-dark-gray;
+                            background-color: $very-dark-gray;
                         }
                     }
                 }
-
             }
             .slide-info {
                 padding: 2rem 1.5rem 3rem;
+
+                @include desktop {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    max-width: 38rem;
+                    margin-inline: auto;
+                    padding-right: 10rem;
+                }
 
                 h1 {
                     font-size: 1.5rem;
                     font-weight: 700;
                     margin-bottom: 1rem;
                     line-height: 1.2;
+
+                    @include desktop {
+                        font-size: 3rem;
+                    }
                 }
 
                 p {
@@ -210,6 +303,11 @@ main {
                     width: 70%;
                     text-transform: uppercase;
                     letter-spacing: 10px;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: $dark-gray;
+                    }
                 }
 
             }
@@ -217,8 +315,34 @@ main {
     }
 
     section.bottom {
+
+        @include desktop {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        .first-image {
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .second-image {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            
+        }
+
         .bottom-text {
             padding: 2rem 1.5rem;
+
+            
+
             h2 {
                 font-size: 1.5rem;
                 font-weight: 700;
